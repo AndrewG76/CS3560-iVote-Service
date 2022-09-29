@@ -4,41 +4,28 @@ CS3560 Object-Oriented Programming, Yu Sun
 September 29, 2022
  */
 
+import java.util.*;
+
 public class SingleSelectionQuestion implements Question{
 
 private String question;
-private String[] possibleSingleChoices = {"1. Right", "2. Wrong"};
-private int[] singleChoiceCounts = {0, 0};
+private ArrayList<String> choice = new ArrayList<String>();
 
-    public SingleSelectionQuestion(String inputQuestion){
+    public SingleSelectionQuestion(String inputQuestion, ArrayList<String> inputChoice){
+        question = inputQuestion;
+        choice = inputChoice;
+    }
+
+    public void setQuestion(String inputQuestion){
         question = inputQuestion;
     }
-
-    public void printQuestion(){
-        System.out.println(question);
+    public setChoice(ArrayList<String> inputChoice){
+        choice = inputChoice;
     }
-
-    public void printChoice(){
-        System.out.println("Please select one answer only.");
-            for(int i = 0; i < possibleSingleChoices.length; i++){
-                System.out.println(possibleSingleChoices[i]);
-            }
+    public String getQuestion(){
+        return question;
     }
-
-    public getChoice(int inputIndex){
-        return possibleSingleChoices[inputIndex];
-    }
-
-    public int getCounter(int inputIndex){
-        return singleChoiceCounts[inputIndex];
-    }
-
-    public void incrementPollCount(boolean inputAnswer){
-        if(inputAnswer == True){
-            singleChoiceCounts[0]++;
-        }
-        else if(inputAnswer == False){
-            singleChoiceCounts[1]++;
-        }
+    public getChoice(){
+        return choice;
     }
 }

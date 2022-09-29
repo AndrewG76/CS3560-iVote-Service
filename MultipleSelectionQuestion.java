@@ -4,48 +4,28 @@ CS3560 Object-Oriented Programming, Yu Sun
 September 29, 2022
  */
 
+import java.util.*;
+
 public class MultipleSelectionQuestion implements Question{
 
     private String question;
-    private String[] possibleMultipleChoices = {"A", "B", "C", "D"};
-    private int[] multipleChoiceCounts = {0, 0, 0, 0};
+    private ArrayList<String> choices = new ArrayList<String>();
 
-    public MultipleSelectionQuestion(String inputQuestion){
+    public MultipleSelectionQuestion(String inputQuestion, ArrayList<String> inputChoices){
+        question = inputQuestion;
+        answers = inputAnswers;
+    }
+
+    public void setQuestion(String inputQuestion){
         question = inputQuestion;
     }
-
-    public void printQuestion(){ //This prints the question out to the user
-        System.out.println(question);
+    public setChoice(ArrayList<String> inputChoices){
+        choices = inputChoices;
     }
-
-    public void printChoice(){ //This prints out the choices to the user
-        System.out.println("Please select at least one answer. More than one may be correct!");
-        for(int i = 0; i < possibleMultipleChoices.length; i++){
-            System.out.println(possibleMultipleChoices[i]);
-        }
+    public String getQuestion(){
+        return question;
     }
-
-    public String getChoice(int inputIndex){
-        return possibleMultipleChoices[inputIndex];
+    public getChoice(){
+        return choice;
     }
-
-    public int getCounter(int inputIndex){
-        return multipleChoiceCounts[inputIndex];
-    }
-
-    public void incrementPollCount(boolean[] inputAnswer){
-       if(inputAnswer[0] == True){
-        multipleChoiceCounts[0] += 1;
-       }
-       if(inputAnswer[1] == True){
-        multipleChoiceCounts[1] += 1;
-       }
-       if(inputAnswer[2] == True){
-        multipleChoiceCounts[2] += 1;
-       }
-       if(inputAnswer[3] == True){
-        multipleChoiceCounts[3] += 1;
-       }
-    }
-
 }

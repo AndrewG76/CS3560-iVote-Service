@@ -1,21 +1,32 @@
-/* 
-Gravino, Andrew
-CS3560 Object-Oriented Programming, Yu Sun
-September 29, 2022
- */
+import java.util.ArrayList;
 
-/*
-Understand:
-    The simulation driver class exists to randomly generate a number of students 
-    Those students will be answering questions with either one choice only or be able to choose as many as they want
+// Gravino, Andrew
+// CS3560 Object-Oriented Programming, Yu Sun
+// September 29, 2022
 
-Match:
-    This is a driver class that will call a separate question and answer to be generated each run alongside approximately 100 students with unique id's
-    That implies we will be needing to reset our results, the student data, their answers, the question, and the correct answer each time
- */
+//Understand:
+//The simulation driver class exists to randomly generate a number of students 
+//Those students will be answering questions with either one choice only or be able to choose as many as they want
 
+//Match:
+//This is a driver class that will call a separate question and answer to be generated each run alongside approximately 100 students with unique id's
+//That implies we will be needing to reset our results, the student data, their answers, the question, and the correct answer each time
+//That being said, we need to handle the counts in THIS class
+ 
 class SimulationDriver{
     public static void main(String[] args){
         System.out.println("This is the SimulationDriver being run.");
+
+        ArrayList<Student> arrayOfStudents = new ArrayList<Student>();
+        for(int i = 0; i < 50; i++){
+            arrayOfStudents.add(new Student()); 
+        }
+
+        MultipleSelectionQuestion question1 = ("How many computer scientists does it take to turn on a vacuum cleaner?");
+        
+        VotingService q1 = new VotingService(arrayOfStudents, q1);
+
+
+
     }
 }

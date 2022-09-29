@@ -11,12 +11,16 @@ Understand:
     Apply generic method titles
  */
 
+import java.util.*;
+
 public interface Question{
-    //Print the question being posed to the users
-    public void printQuestion();
+    //Set the question 
+    public void setQuestion();
+    //Sets the answer
+    public void setChoice(ArrayList<String> inputChoice);
 
-    //Prints the choices of the users 
-    public void printChoice();
-
+    //Get the question being posed to the users
+    public String getQuestion();
+    //Gets the selected answer(s)
     public String getChoice(int inputIndex);
 }
