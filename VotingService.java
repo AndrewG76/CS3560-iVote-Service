@@ -13,3 +13,17 @@ Understand:
 
 
  */
+
+public class VotingService implements Question{
+    private int[] multipleSelectionCounts = {0, 0, 0, 0}; //This represents the possible choices of A B C D
+    private int[] singleChoiceCounts = {0, 0};
+
+    private String[] uniqueIDs;
+    private Student studentSubmission;
+
+    public void submissionResults(int[] counter, String[] questionType){
+        for(int i = 0; i < questionType.length; i++){
+            System.out.println(questionType[i] + " : " + counter[i]);
+        }
+    }
+}

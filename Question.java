@@ -17,4 +17,7 @@ public interface Question{
 
     //Prints the choices of the users 
     public void printChoice();
+
+    //Increments the number of votes for specific sections of the poll
+    public void addCounter();
 }
