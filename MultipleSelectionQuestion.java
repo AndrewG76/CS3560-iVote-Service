@@ -11,7 +11,7 @@ public class MultipleSelectionQuestion implements Question{
     private int[] multipleChoiceCounts = {0, 0, 0, 0};
 
     public MultipleSelectionQuestion(String inputQuestion){
-        inputQuestion = question;
+        question = inputQuestion;
     }
 
     public void printQuestion(){ //This prints the question out to the user
@@ -32,4 +32,20 @@ public class MultipleSelectionQuestion implements Question{
     public int getCounter(int inputIndex){
         return multipleChoiceCounts[inputIndex];
     }
+
+    public void incrementPollCount(boolean[] inputAnswer){
+       if(inputAnswer[0] == True){
+        multipleChoiceCounts[0] += 1;
+       }
+       if(inputAnswer[1] == True){
+        multipleChoiceCounts[1] += 1;
+       }
+       if(inputAnswer[2] == True){
+        multipleChoiceCounts[2] += 1;
+       }
+       if(inputAnswer[3] == True){
+        multipleChoiceCounts[3] += 1;
+       }
+    }
+
 }

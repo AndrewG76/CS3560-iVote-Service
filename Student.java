@@ -12,19 +12,27 @@ Understand:
 public class Student{
 
     private String uniqueID;
-    private char singleChoiceAnswer;
-    private String multipleChoiceAnswer;
+    private boolean singleChoiceAnswer;
+    private boolean[] multipleChoiceAnswer;
 
-    public void Student(String inputID, String inputMultipleChoice){
+    public Student(String inputID, boolean[] inputMultipleChoice){
         uniqueID = inputID;
         multipleChoiceAnswer = inputMultipleChoice;
     }
 
-    public void Student(String inputID, char inputSingleChoice){
+    public Student(String inputID, boolean inputSingleChoice){
         uniqueID = inputID;
         singleChoiceAnswer = inputSingleChoice;
     }
 
+    public void setSingleChoiceAnswer(boolean inputSingleChoice){
+        singleChoiceAnswer = inputSingleChoice;
+    }
+
+    public void multipleSelectionAnswer(boolean[] inputMultipleChoice){
+        singleChoiceAnswer = inputMultipleChoice;
+    }
+    
     public String getUniqueID(){
         return uniqueID;
     }

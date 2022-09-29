@@ -10,6 +10,10 @@ private String question;
 private String[] possibleSingleChoices = {"1. Right", "2. Wrong"};
 private int[] singleChoiceCounts = {0, 0};
 
+    public SingleSelectionQuestion(String inputQuestion){
+        question = inputQuestion;
+    }
+
     public void printQuestion(){
         System.out.println(question);
     }
@@ -27,5 +31,14 @@ private int[] singleChoiceCounts = {0, 0};
 
     public int getCounter(int inputIndex){
         return singleChoiceCounts[inputIndex];
+    }
+
+    public void incrementPollCount(boolean inputAnswer){
+        if(inputAnswer == True){
+            singleChoiceCounts[0]++;
+        }
+        else if(inputAnswer == False){
+            singleChoiceCounts[1]++;
+        }
     }
 }

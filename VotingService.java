@@ -15,6 +15,8 @@ Understand:
  */
 
 public class VotingService implements Question{
-    //empty for now, will replace this with a way to add new students to an array that is constructed upon running
-    //will proceed with printing questions and choices!
+    private ArrayList<Student> studentList = new ArrayList<Student>();
+    private ArrayList<String> idLIST = new ArrayList<String>();
+
+
 }
