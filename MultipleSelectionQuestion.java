@@ -9,23 +9,23 @@ import java.util.*;
 public class MultipleSelectionQuestion implements Question{
 
     private String question;
-    private ArrayList<String> choices = new ArrayList<String>();
+    private ArrayList<String> choice = new ArrayList<String>(); //Set to ArrayList because it can be a list of multiple answers a user selects, not just one answer.
 
-    public MultipleSelectionQuestion(String inputQuestion, ArrayList<String> inputChoices){
+    public MultipleSelectionQuestion(String inputQuestion, ArrayList<String> inputChoice){
         question = inputQuestion;
-        answers = inputAnswers;
+        choice = inputChoice;
     }
 
     public void setQuestion(String inputQuestion){
         question = inputQuestion;
     }
-    public setChoice(ArrayList<String> inputChoices){
-        choices = inputChoices;
+    public void setChoice(ArrayList<String> inputChoices){
+        choice = inputChoices;
     }
     public String getQuestion(){
         return question;
     }
-    public getChoice(){
+    public ArrayList<String> getChoice(){
         return choice;
     }
 }

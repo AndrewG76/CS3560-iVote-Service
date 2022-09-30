@@ -9,40 +9,22 @@ Understand:
     This class exists to store the unique ID's and a person's answers
  */
 
+import java.util.*;
+
 public class Student{
 
-    private String uniqueID;
-    private boolean singleChoiceAnswer;
-    private boolean[] multipleChoiceAnswer;
+    private int uniqueID;
+    private int answer;
 
-    public Student(String inputID, boolean[] inputMultipleChoice){
+    public Student(int inputID){
         uniqueID = inputID;
-        multipleChoiceAnswer = inputMultipleChoice;
     }
 
-    public Student(String inputID, boolean inputSingleChoice){
-        uniqueID = inputID;
-        singleChoiceAnswer = inputSingleChoice;
-    }
-
-    public void setSingleChoiceAnswer(boolean inputSingleChoice){
-        singleChoiceAnswer = inputSingleChoice;
-    }
-
-    public void multipleSelectionAnswer(boolean[] inputMultipleChoice){
-        singleChoiceAnswer = inputMultipleChoice;
+    public void setAnswer(int inputAnswer){
+        answer = inputAnswer;
     }
     
-    public String getUniqueID(){
+    public int getUniqueID(){
         return uniqueID;
     }
-
-    public String getSingleChoiceAnswer(){
-        return singleChoiceAnswer;
-    }
-
-    public String getMultipleChoiceAnswer(){
-        return multipleChoiceAnswer;
-    }
-
 }

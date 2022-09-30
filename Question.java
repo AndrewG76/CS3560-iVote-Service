@@ -15,12 +15,12 @@ import java.util.*;
 
 public interface Question{
     //Set the question 
-    public void setQuestion();
+    public void setQuestion(String inputQuestion);
     //Sets the answer
     public void setChoice(ArrayList<String> inputChoice);
 
     //Get the question being posed to the users
     public String getQuestion();
     //Gets the selected answer(s)
-    public String getChoice(int inputIndex);
+    public ArrayList<String> getChoice();
 }
