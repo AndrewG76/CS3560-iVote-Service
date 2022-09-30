@@ -27,10 +27,11 @@ class SimulationDriver{
     private static Student[] studentList = new Student[50];
 
     public static void main(String[] args){
-        System.out.println("This is the SimulationDriver being run.");
+        System.out.println("This is the SimulationDriver being run for a Multiple Selection Question.");
         int temporaryAnswer;
 
-        question1 = new SingleSelectionQuestion("What is the third letter of the alphabet?", studentAnswers);
+        question2 = new MultipleSelectionQuestion("What is the third letter of the alphabet?", studentAnswers);
+        System.out.println(question2.getQuestion());
 
         for(int i = 0; i < studentList.length; i++){
             studentList[i] = new Student(i);
@@ -41,8 +42,29 @@ class SimulationDriver{
             studentList[i].setAnswer(i);
         }
 
-        // vote1.voteIncrement(studentAnswers);
-        System.out.println(studentAnswers);
+        vote2 = new VotingService(studentAnswers);
+        vote2.voteIncrement(studentAnswers);
+        vote2.printResults();
+
+        studentList = new Student[50];
+        studentAnswers.clear();
+
+
+        //////////////////////////////////////////////////////////////////////////////////////
+        System.out.println("\nThis is the SimulationDriver being run for a Single Selection Question.");
+
+        question2 = new MultipleSelectionQuestion("What is your favorite letter of the first four letters of the alphabet?", studentAnswers);
+        System.out.println(question2.getQuestion());
+
+        for(int i = 0; i < studentList.length; i++){
+            studentList[i] = new Student(i);
+            temporaryAnswer = (int)(Math.random() * 4) + 1;
+            studentAnswers.add(possibleChoices[temporaryAnswer - 1]);
+            studentList[i].setAnswer(temporaryAnswer);
+        }
+
+        vote1 = new VotingService(studentAnswers);
+        vote1.voteIncrement(studentAnswers);
         vote1.printResults();
 
     }

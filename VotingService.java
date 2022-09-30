@@ -18,11 +18,17 @@ import java.util.*;
 
 public class VotingService{
     private int[] choiceCounts = {0, 0, 0, 0};
+    private ArrayList<String> answerList;
     private String temporaryAnswer;
 
+    public VotingService(ArrayList<String> inputAnswers){
+        answerList = inputAnswers;
+    }
+
     public void voteIncrement(ArrayList<String> inputAnswers){
+
         for(int i = 0; i < inputAnswers.size(); i++){
-            temporaryAnswer = inputAnswers.get(i); 
+            temporaryAnswer = answerList.get(i); 
             if(temporaryAnswer.equals("A")){
                 choiceCounts[0] += 1;
             }
