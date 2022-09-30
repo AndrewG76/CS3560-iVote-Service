@@ -17,17 +17,17 @@ Understand:
 import java.util.*;
 
 public class VotingService{
-    private int[] choiceCounts = {0, 0, 0, 0};
+    private int[] choiceCounts = {0, 0, 0, 0}; //Counts represent the corresponding A B C D choices
     private ArrayList<String> answerList;
     private String temporaryAnswer;
 
-    public VotingService(ArrayList<String> inputAnswers){
+    public VotingService(ArrayList<String> inputAnswers){ //Constructor to allow SimulationDriver to immediately start getting to work with assigning private variables
         answerList = inputAnswers;
     }
 
-    public void voteIncrement(ArrayList<String> inputAnswers){
+    public void voteIncrement(){ //With the answerList already in our private variables, we can start adjusting the counts for each choice using comparison at each index value to increment one by one
 
-        for(int i = 0; i < inputAnswers.size(); i++){
+        for(int i = 0; i < answerList.size(); i++){
             temporaryAnswer = answerList.get(i); 
             if(temporaryAnswer.equals("A")){
                 choiceCounts[0] += 1;
@@ -44,7 +44,7 @@ public class VotingService{
         }
     }
 
-    public void printResults(){
+    public void printResults(){ //This method is ready to display the corresponding scores once it is called at the end of each run in the SimulationDriver
         System.out.println("Final Results:");
         System.out.println("A: " + choiceCounts[0]);
         System.out.println("B: " + choiceCounts[1]);

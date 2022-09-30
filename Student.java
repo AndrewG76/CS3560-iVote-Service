@@ -16,19 +16,19 @@ public class Student{
     private int uniqueID;
     private int answer;
 
-    public Student(int inputID){
+    public Student(int inputID){ //Constructor for setting a student ID. Set up like this to better suit the rapid declaration of 50 students rather than call a setter 50 times
         uniqueID = inputID;
     }
 
-    public void setAnswer(int inputAnswer){
+    public void setAnswer(int inputAnswer){ //Allows the random aspect of the temporaryVariable in SimulationDriver to easily adjust a Student's answer and possibly select more.
         answer = inputAnswer;
     }
     
-    public int getUniqueID(){
+    public int getUniqueID(){ //Fetches the students' unique ID's. Used to differentiate between students but not all that needed during this project aside from debugging
         return uniqueID;
     }
 
-    public int getAnswer(){
+    public int getAnswer(){ //Fetches the answer associated, more useful for debugging purposes if we do not see the interactivity normally.
         return answer;
     }
 }
