@@ -27,4 +27,8 @@ public class Student{
     public int getUniqueID(){
         return uniqueID;
     }
+
+    public int getAnswer(){
+        return answer;
+    }
 }
